@@ -52,6 +52,11 @@ public class ArrayUtilsTest {
     }
 
     @Test
+    public void testCountOfWithNull(){
+        assertThrows(NullPointerException.class, () -> ArrayUtils.countOf(null, 0));
+    }
+
+    @Test
     public void testCountOfTargetNotInArray(){
         assertEquals(0, ArrayUtils.countOf(new int[]{0, 1, 2}, -1));
     }
@@ -60,6 +65,8 @@ public class ArrayUtilsTest {
     public void testCountOfTargetInArray(){
         assertEquals(1, ArrayUtils.countOf(new int[]{0, 1, 2}, 0));
     }
+
+
 
 
 
